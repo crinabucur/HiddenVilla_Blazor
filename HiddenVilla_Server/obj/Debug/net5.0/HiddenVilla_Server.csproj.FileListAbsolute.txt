@@ -21,6 +21,8 @@ C:\Users\CrinaBucur\RiderProjects\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.
 C:\Users\CrinaBucur\RiderProjects\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\RazorDeclaration\Pages\Counter.razor.g.cs
 C:\Users\CrinaBucur\RiderProjects\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\RazorDeclaration\Pages\FetchData.razor.g.cs
 C:\Users\CrinaBucur\RiderProjects\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\RazorDeclaration\Pages\Index.razor.g.cs
+C:\Users\CrinaBucur\RiderProjects\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\RazorDeclaration\Pages\LearnBlazor\BindProp.razor.g.cs
+C:\Users\CrinaBucur\RiderProjects\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\RazorDeclaration\Pages\LearnBlazor\HotelDemo.razor.g.cs
 C:\Users\CrinaBucur\RiderProjects\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\RazorDeclaration\Shared\SurveyPrompt.razor.g.cs
 C:\Users\CrinaBucur\RiderProjects\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\RazorDeclaration\_Imports.razor.g.cs
 C:\Users\CrinaBucur\RiderProjects\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\RazorDeclaration\Shared\MainLayout.razor.g.cs
@@ -34,6 +36,8 @@ C:\Users\CrinaBucur\RiderProjects\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.
 C:\Users\CrinaBucur\RiderProjects\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\Razor\Pages\Counter.razor.g.cs
 C:\Users\CrinaBucur\RiderProjects\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\Razor\Pages\FetchData.razor.g.cs
 C:\Users\CrinaBucur\RiderProjects\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\Razor\Pages\Index.razor.g.cs
+C:\Users\CrinaBucur\RiderProjects\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\Razor\Pages\LearnBlazor\BindProp.razor.g.cs
+C:\Users\CrinaBucur\RiderProjects\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\Razor\Pages\LearnBlazor\HotelDemo.razor.g.cs
 C:\Users\CrinaBucur\RiderProjects\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\Razor\Shared\SurveyPrompt.razor.g.cs
 C:\Users\CrinaBucur\RiderProjects\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\Razor\_Imports.razor.g.cs
 C:\Users\CrinaBucur\RiderProjects\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\Razor\Shared\MainLayout.razor.g.cs
@@ -56,5 +60,3 @@ C:\Users\CrinaBucur\RiderProjects\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.
 C:\Users\CrinaBucur\RiderProjects\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\HiddenVilla_Server.pdb
 C:\Users\CrinaBucur\RiderProjects\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\HiddenVilla_Server.genruntimeconfig.cache
 C:\Users\CrinaBucur\RiderProjects\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\HiddenVilla_Server.csproj.CopyComplete
-C:\Users\CrinaBucur\RiderProjects\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\RazorDeclaration\Pages\LearnBlazor\BindProp.razor.g.cs
-C:\Users\CrinaBucur\RiderProjects\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\Razor\Pages\LearnBlazor\BindProp.razor.g.cs

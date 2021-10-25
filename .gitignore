@@ -1,2 +1,5 @@
 
 HiddenVilla.sln.DotSettings.user
+*.dll
+*.pdb
+*.cache

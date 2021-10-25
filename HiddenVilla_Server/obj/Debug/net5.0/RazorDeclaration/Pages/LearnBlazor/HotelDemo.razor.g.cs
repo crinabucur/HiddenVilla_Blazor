@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace HiddenVilla_Server.Shared
+namespace HiddenVilla_Server.Pages.LearnBlazor
 {
     #line hidden
     using System;
@@ -82,7 +82,15 @@ using HiddenVilla_Server.Shared;
 #line default
 #line hidden
 #nullable disable
-    public partial class NavMenu : Microsoft.AspNetCore.Components.ComponentBase
+#nullable restore
+#line 2 "C:\Users\CrinaBucur\RiderProjects\HiddenVilla\HiddenVilla_Server\Pages\LearnBlazor\HotelDemo.razor"
+using Model;
+
+#line default
+#line hidden
+#nullable disable
+    [Microsoft.AspNetCore.Components.RouteAttribute("/DemoHotel")]
+    public partial class HotelDemo : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -90,17 +98,40 @@ using HiddenVilla_Server.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 38 "C:\Users\CrinaBucur\RiderProjects\HiddenVilla\HiddenVilla_Server\Shared\NavMenu.razor"
+#line 32 "C:\Users\CrinaBucur\RiderProjects\HiddenVilla\HiddenVilla_Server\Pages\LearnBlazor\HotelDemo.razor"
        
-    private bool collapseNavMenu = true;
-
-    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-
-    private void ToggleNavMenu()
+    string selectedRoomProp = "";
+    List<BlazorRoom> roomsList = new();
+    
+    protected override void OnInitialized()
     {
-        collapseNavMenu = !collapseNavMenu;
+        base.OnInitialized();
+        roomsList.Add(new BlazorRoom()
+        {
+            Id = 101,
+            RoomName = "King Suite",
+            IsActive = false,
+            Price = 100,
+            RoomProps = new List<BlazorRoomProp>
+            {
+                new() { Id = 1, Name = "Sq Ft", Value = "100"},
+                new() { Id = 2, Name = "Occupancy", Value = "3"}
+            }
+        });
+        
+        roomsList.Add(new BlazorRoom()
+        {
+            Id = 102,
+            RoomName = "Queen Suite",
+            IsActive = true,
+            Price = 70,
+            RoomProps = new List<BlazorRoomProp>
+            {
+                new() { Id = 1, Name = "Sq Ft", Value = "80"},
+                new() { Id = 2, Name = "Occupancy", Value = "2"}
+            }
+        });
     }
-
 
 #line default
 #line hidden
