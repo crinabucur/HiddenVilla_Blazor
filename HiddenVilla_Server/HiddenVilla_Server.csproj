@@ -4,4 +4,85 @@
         <TargetFramework>net5.0</TargetFramework>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Content Include="obj\Debug\net5.0\apphost.exe" />
+      <Content Include="obj\Debug\net5.0\HiddenVilla_Server.AssemblyInfoInputs.cache" />
+      <Content Include="obj\Debug\net5.0\HiddenVilla_Server.assets.cache" />
+      <Content Include="obj\Debug\net5.0\HiddenVilla_Server.csproj.CopyComplete" />
+      <Content Include="obj\Debug\net5.0\HiddenVilla_Server.csproj.CoreCompileInputs.cache" />
+      <Content Include="obj\Debug\net5.0\HiddenVilla_Server.csproj.FileListAbsolute.txt" />
+      <Content Include="obj\Debug\net5.0\HiddenVilla_Server.csprojAssemblyReference.cache" />
+      <Content Include="obj\Debug\net5.0\HiddenVilla_Server.dll" />
+      <Content Include="obj\Debug\net5.0\HiddenVilla_Server.GeneratedMSBuildEditorConfig.editorconfig" />
+      <Content Include="obj\Debug\net5.0\HiddenVilla_Server.genruntimeconfig.cache" />
+      <Content Include="obj\Debug\net5.0\HiddenVilla_Server.MvcApplicationPartsAssemblyInfo.cache" />
+      <Content Include="obj\Debug\net5.0\HiddenVilla_Server.pdb" />
+      <Content Include="obj\Debug\net5.0\HiddenVilla_Server.RazorAssemblyInfo.cache" />
+      <Content Include="obj\Debug\net5.0\HiddenVilla_Server.RazorComponent.input.cache" />
+      <Content Include="obj\Debug\net5.0\HiddenVilla_Server.RazorComponent.output.cache" />
+      <Content Include="obj\Debug\net5.0\HiddenVilla_Server.RazorCoreGenerate.cache" />
+      <Content Include="obj\Debug\net5.0\HiddenVilla_Server.RazorTargetAssemblyInfo.cache" />
+      <Content Include="obj\Debug\net5.0\HiddenVilla_Server.TagHelpers.input.cache" />
+      <Content Include="obj\Debug\net5.0\HiddenVilla_Server.TagHelpers.output.cache" />
+      <Content Include="obj\Debug\net5.0\HiddenVilla_Server.Views.dll" />
+      <Content Include="obj\Debug\net5.0\HiddenVilla_Server.Views.pdb" />
+      <Content Include="obj\Debug\net5.0\RazorDeclaration\HiddenVilla_Server.dll" />
+      <Content Include="obj\Debug\net5.0\RazorDeclaration\HiddenVilla_Server.pdb" />
+      <Content Include="obj\Debug\net5.0\ref\HiddenVilla_Server.dll" />
+      <Content Include="obj\Debug\net5.0\scopedcss\bundle\HiddenVilla_Server.styles.css" />
+      <Content Include="obj\Debug\net5.0\scopedcss\projectbundle\HiddenVilla_Server.bundle.scp.css" />
+      <Content Include="obj\Debug\net5.0\scopedcss\Shared\MainLayout.razor.rz.scp.css" />
+      <Content Include="obj\Debug\net5.0\scopedcss\Shared\NavMenu.razor.rz.scp.css" />
+      <Content Include="obj\Debug\net5.0\staticwebassets\HiddenVilla_Server.StaticWebAssets.Manifest.cache" />
+      <Content Include="obj\Debug\net5.0\staticwebassets\HiddenVilla_Server.StaticWebAssets.xml" />
+      <Content Include="obj\HiddenVilla_Server.csproj.nuget.dgspec.json" />
+      <Content Include="obj\HiddenVilla_Server.csproj.nuget.g.props" />
+      <Content Include="obj\HiddenVilla_Server.csproj.nuget.g.targets" />
+      <Content Include="obj\project.assets.json" />
+      <Content Include="obj\project.nuget.cache" />
+      <Content Include="obj\project.packagespec.json" />
+      <Content Include="obj\rider.project.restore.info" />
+      <Content Remove="obj\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Include="obj\Debug\net5.0\.NETCoreApp,Version=v5.0.AssemblyAttributes.cs" />
+      <Compile Include="obj\Debug\net5.0\HiddenVilla_Server.AssemblyInfo.cs" />
+      <Compile Include="obj\Debug\net5.0\HiddenVilla_Server.RazorAssemblyInfo.cs" />
+      <Compile Include="obj\Debug\net5.0\HiddenVilla_Server.RazorTargetAssemblyInfo.cs" />
+      <Compile Include="obj\Debug\net5.0\RazorDeclaration\App.razor.g.cs" />
+      <Compile Include="obj\Debug\net5.0\RazorDeclaration\Pages\Counter.razor.g.cs" />
+      <Compile Include="obj\Debug\net5.0\RazorDeclaration\Pages\FetchData.razor.g.cs" />
+      <Compile Include="obj\Debug\net5.0\RazorDeclaration\Pages\Index.razor.g.cs" />
+      <Compile Include="obj\Debug\net5.0\RazorDeclaration\Pages\LearnBlazor\BindProp.razor.g.cs" />
+      <Compile Include="obj\Debug\net5.0\RazorDeclaration\Pages\LearnBlazor\DemoHotel.razor.g.cs" />
+      <Compile Include="obj\Debug\net5.0\RazorDeclaration\Pages\LearnBlazor\LearnBlazorComponent\EditDeleteButton.razor.g.cs" />
+      <Compile Include="obj\Debug\net5.0\RazorDeclaration\Shared\MainLayout.razor.g.cs" />
+      <Compile Include="obj\Debug\net5.0\RazorDeclaration\Shared\NavMenu.razor.g.cs" />
+      <Compile Include="obj\Debug\net5.0\RazorDeclaration\Shared\SurveyPrompt.razor.g.cs" />
+      <Compile Include="obj\Debug\net5.0\RazorDeclaration\_Imports.razor.g.cs" />
+      <Compile Include="obj\Debug\net5.0\Razor\App.razor.g.cs" />
+      <Compile Include="obj\Debug\net5.0\Razor\Pages\Counter.razor.g.cs" />
+      <Compile Include="obj\Debug\net5.0\Razor\Pages\Error.cshtml.g.cs" />
+      <Compile Include="obj\Debug\net5.0\Razor\Pages\FetchData.razor.g.cs" />
+      <Compile Include="obj\Debug\net5.0\Razor\Pages\Index.razor.g.cs" />
+      <Compile Include="obj\Debug\net5.0\Razor\Pages\LearnBlazor\BindProp.razor.g.cs" />
+      <Compile Include="obj\Debug\net5.0\Razor\Pages\LearnBlazor\DemoHotel.razor.g.cs" />
+      <Compile Include="obj\Debug\net5.0\Razor\Pages\LearnBlazor\LearnBlazorComponent\EditDeleteButton.razor.g.cs" />
+      <Compile Include="obj\Debug\net5.0\Razor\Pages\_Host.cshtml.g.cs" />
+      <Compile Include="obj\Debug\net5.0\Razor\Shared\MainLayout.razor.g.cs" />
+      <Compile Include="obj\Debug\net5.0\Razor\Shared\NavMenu.razor.g.cs" />
+      <Compile Include="obj\Debug\net5.0\Razor\Shared\SurveyPrompt.razor.g.cs" />
+      <Compile Include="obj\Debug\net5.0\Razor\_Imports.razor.g.cs" />
+      <Compile Remove="obj\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="obj\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="obj\**" />
+    </ItemGroup>
+
 </Project>
