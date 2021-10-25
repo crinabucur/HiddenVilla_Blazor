@@ -3,3 +3,7 @@ HiddenVilla.sln.DotSettings.user
 *.dll
 *.pdb
 *.cache
+bin
+obj
+packages
+*.g.cs
