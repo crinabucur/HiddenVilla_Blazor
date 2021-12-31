@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: crinabucur/hello-world-javascript-action@v1.1
+        uses: ./.github/actions/hello-world-javascript-action@v1.1
         with:
           who-to-greet: 'Crina Catalina Bucur'
       # Use the output from the `hello` step
