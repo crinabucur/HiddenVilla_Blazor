@@ -13,7 +13,7 @@ jobs:
         run: git submodule update --init --recursive
       - name: Hello world action step
         id: hello
-        uses: ./.github/actions/hello-world-javascript-action
+        uses: ./.github/actions/hello-world-javascript-action@e1a9aa4
         with:
           who-to-greet: 'Crina Catalina Bucur'
       # Use the output from the `hello` step
