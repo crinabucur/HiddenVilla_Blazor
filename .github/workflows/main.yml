@@ -7,10 +7,10 @@ jobs:
     steps:
       # To use this repository's private action,
       # you must check out the repository
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v2
-        with:
-          submodules: recursive
+      - name: Checkout submodules
+        run: git submodule update --init --recursive
       - name: Hello world action step
         id: hello
         uses: ./.github/actions/hello-world-javascript-action
