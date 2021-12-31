@@ -9,6 +9,8 @@ jobs:
       # you must check out the repository
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          submodules: recursive
       - name: Hello world action step
         id: hello
         uses: ./.github/actions/hello-world-javascript-action
