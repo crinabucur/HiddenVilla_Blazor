@@ -13,7 +13,7 @@ jobs:
                 SSH_KEY: ${{secrets.HELLO_WORLD_JS_ACTION_READONLY_ACCESS_PRIVATE_KEY}}
               uses: actions/checkout@v2
               with:
-                repository: crinabucur/hello-world-javascript-action
+                repository: git@github.com:crinabucur/hello-world-javascript-action
                 path: hello-world-javascript-action
                 #ref: v1.1
                 ssh-key: ${{secrets.HELLO_WORLD_JS_ACTION_READONLY_ACCESS_PRIVATE_KEY}}
