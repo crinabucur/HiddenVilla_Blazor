@@ -19,12 +19,25 @@ jobs:
                 ssh-key: ${{secrets.HELLO_WORLD_JS_ACTION_READONLY_ACCESS_PRIVATE_KEY}}
                 persist-credentials: true
 
-            - name: checkout submodule
-              env:
-                SSH_KEY: ${{secrets.HELLO_WORLD_JS_ACTION_READONLY_ACCESS_PRIVATE_KEY}}
-              run: |
-                git submodule init
-                git submodule update
+            - name: Checkout submodules
+              run: git submodule update --init --recursive
+              
+            # - name: checkout submodule
+              # env:
+                # SSH_KEY: ${{secrets.HELLO_WORLD_JS_ACTION_READONLY_ACCESS_PRIVATE_KEY}}
+              # run: |
+                # git submodule init
+                # git submodule update
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
             
             # - name: Checkout submodules
               # run: git submodule update --init --recursive
