@@ -14,7 +14,6 @@ jobs:
              run: |
                ssh-agent -a $SSH_AUTH_SOCK > /dev/null
                ssh-add - <<< "${{ secrets.HELLO_WORLD_JS_ACTION_READONLY_ACCESS_PRIVATE_KEY }}"
-
         - name: Some task that fetches dependencies
              env:
                SSH_AUTH_SOCK: /tmp/ssh_agent.sock
