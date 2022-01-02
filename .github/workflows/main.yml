@@ -13,8 +13,8 @@ jobs:
             - name: hello world action step
               id: hello
               #uses: ./.github/actions/hello-world-javascript-action
-              uses: https://github.com/crinabucur/hello-world-javascript-action
-              #uses: crinabucur/hello-world-javascript-action
+              #uses: https://github.com/crinabucur/hello-world-javascript-action
+              uses: crinabucur/hello-world-javascript-action@v1.1
               with:
                   who-to-greet: 'crina catalina bucur'
                   
