@@ -2,35 +2,108 @@ on: [push]
 
 jobs:
     build:
-        runs-on: ubuntu-18.04
-        steps:
-            -   uses: actions/checkout@v1
+       runs-on: ubuntu-latest
 
-            -   name: Setup SSH Keys and known_hosts
-                env:
-                    SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-                run: |
-                    ssh-agent -a $SSH_AUTH_SOCK > /dev/null
-                    ssh-add - <<< "${{secrets.HELLO_WORLD_JS_ACTION_READONLY_ACCESS_PRIVATE_KEY}}"
-
-            -   name: Some task that fetches dependencies
-                env:
-                    SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-                run: ./fetch-deps.sh
-                
+       steps:
+            # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+            - uses: actions/checkout@v2
+            - name: Trigger release build
+            env:
+                SSH_KEY_FOR_SUBMODULE: ${{secrets.HELLO_WORLD_JS_ACTION_READONLY_ACCESS_PRIVATE_KEY}}
+            run: |
+          mkdir $HOME/.ssh && echo "$SSH_KEY_FOR_SUBMODULE" > $HOME/.ssh/id_rsa && chmod 600 $HOME/.ssh/id_rsa && git submodule update --init --recursive && docker login docker.pkg.github.com -u $GITHUB_ACTOR --password $GITHUB_TOKEN && docker build . -t docker.pkg.github.com/blogname
+    
             - name: hello world action step
-              env:
-                SSH_AUTH_SOCK: /tmp/ssh_agent.sock
               id: hello
-              #uses: ./.github/actions/hello-world-javascript-action
+              uses: ./.github/actions/hello-world-javascript-action
               #uses: https://github.com/crinabucur/hello-world-javascript-action
-              uses: crinabucur/hello-world-javascript-action
+              #uses: crinabucur/hello-world-javascript-action
               with:
                   who-to-greet: 'crina catalina bucur'
                   
               # use the output from the `hello` step
             - name: get the output time
               run: echo "the time was ${{ steps.hello.outputs.time }}"
+              
+              
+              
+              
+              
+    
+        # runs-on: ubuntu-latest
+        # steps:
+          # # checkout this repo
+          # - name: Checkout Repo
+            # uses: actions/checkout@v2
+          # # checkout the private repo containing the action to run
+          # - name: Checkout GitHub Action Repo
+            # uses: actions/checkout@v2
+            # with:
+              # repository: crinabucur/hello-world-javascript-action
+              # ref: v1.1
+              # token: ${{ secrets.GIT_HUB_TOKEN }} # stored in GitHub secrets
+              # path: .github/actions/hello-world-javascript-action
+          # - name: Run My Action
+            # id: hello
+            # uses: ./.github/actions/hello-world-javascript-action
+            # with:
+                  # who-to-greet: 'crina catalina bucur'
+                  
+            # # use the output from the `hello` step
+          # - name: get the output time
+            # run: echo "the time was ${{ steps.hello.outputs.time }}"
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        # runs-on: ubuntu-18.04
+        # steps:
+            # -   uses: actions/checkout@v1
+
+            # -   name: Setup SSH Keys and known_hosts
+                # env:
+                    # SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+                # run: |
+                    # ssh-agent -a $SSH_AUTH_SOCK > /dev/null
+                    # ssh-add - <<< "${{secrets.HELLO_WORLD_JS_ACTION_READONLY_ACCESS_PRIVATE_KEY}}"
+
+            # -   name: Some task that fetches dependencies
+                # env:
+                    # SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+                # run: ./fetch-deps.sh
+                
+            # - name: hello world action step
+              # env:
+                # SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+              # id: hello
+              # #uses: ./.github/actions/hello-world-javascript-action
+              # #uses: https://github.com/crinabucur/hello-world-javascript-action
+              # uses: crinabucur/hello-world-javascript-action
+              # with:
+                  # who-to-greet: 'crina catalina bucur'
+                  
+              # # use the output from the `hello` step
+            # - name: get the output time
+              # run: echo "the time was ${{ steps.hello.outputs.time }}"
         
         
         
