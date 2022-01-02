@@ -4,8 +4,12 @@ jobs:
     build:
         runs-on: ubuntu-18.04
         steps:
-            - uses: actions/checkout@v1
-
+            - name: Checkout repository
+            - uses: actions/checkout@v2
+            
+            - name: Checkout submodules
+              run: git submodule update --init --recursive
+              
             - name: Setup SSH Keys and known_hosts
               env:
                  SSH_AUTH_SOCK: /tmp/ssh_agent.sock
@@ -19,8 +23,8 @@ jobs:
               run: ./fetch-deps.sh
             - name: hello world action step
               id: hello
-              #uses: ./.github/actions/hello-world-javascript-action
-              uses: https://github.com/crinabucur/hello-world-javascript-action
+              uses: ./.github/actions/hello-world-javascript-action
+              #uses: https://github.com/crinabucur/hello-world-javascript-action
               #uses: crinabucur/hello-world-javascript-action
               with:
                   who-to-greet: 'crina catalina bucur'
