@@ -5,13 +5,13 @@ jobs:
         runs-on: ubuntu-18.04
         steps:
             - name: Checkout repository
-              uses: actions/checkout@v1
+              uses: actions/checkout@v2
               
               
             - name: clone submodule
               env:
                 SSH_KEY: ${{secrets.HELLO_WORLD_JS_ACTION_READONLY_ACCESS_PRIVATE_KEY}}
-              uses: actions/checkout@v1
+              uses: actions/checkout@v2
               with:
                 repository: crinabucur/hello-world-javascript-action
                 path: hello-world-javascript-action
