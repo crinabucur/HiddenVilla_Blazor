@@ -19,8 +19,8 @@ jobs:
             #    run: ./fetch-dependencies.sh
             - name: hello world action step
               id: hello
-              uses: ./.github/actions/hello-world-javascript-action
-              #uses: https://github.com/crinabucur/hello-world-javascript-action
+              #uses: ./.github/actions/hello-world-javascript-action
+              uses: https://github.com/crinabucur/hello-world-javascript-action
               with:
                   who-to-greet: 'crina catalina bucur'
               # use the output from the `hello` step
