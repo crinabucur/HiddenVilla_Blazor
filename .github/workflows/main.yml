@@ -9,7 +9,7 @@ jobs:
               
               
             - name: clone submodule
-              env:
+              #env:
                 #SSH_KEY: ${{secrets.HELLO_WORLD_JS_ACTION_READONLY_ACCESS_PRIVATE_KEY}}
               uses: actions/checkout@v2
               with:
