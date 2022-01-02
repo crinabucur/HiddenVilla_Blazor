@@ -4,16 +4,25 @@ jobs:
     build:
         runs-on: ubuntu-18.04
         steps:
-            -   uses: actions/checkout@v1
+            - uses: actions/checkout@v1
 
-            -   name: Setup SSH Keys and known_hosts
+            - name: Setup SSH Keys and known_hosts
                 env:
                     SSH_AUTH_SOCK: /tmp/ssh_agent.sock
                 run: |
                     ssh-agent -a $SSH_AUTH_SOCK > /dev/null
                     ssh-add - <<< "${{ secrets.HELLO_WORLD_JS_ACTION_READONLY_ACCESS_PRIVATE_KEY }}"
 
-            -   name: Some task that fetches dependencies
-                env:
-                    SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-                run: ./fetch-dependencies.sh
+            #-   name: Some task that fetches dependencies
+            #    env:
+            #        SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+            #    run: ./fetch-dependencies.sh
+            - name: Hello world action step
+              id: hello
+                uses: ./.github/actions/hello-world-javascript-action
+                #uses: https://github.com/crinabucur/hello-world-javascript-action
+                with:
+                  who-to-greet: 'Crina Catalina Bucur'
+              # Use the output from the `hello` step
+              - name: Get the output time
+                run: echo "The time was ${{ steps.hello.outputs.time }}"
