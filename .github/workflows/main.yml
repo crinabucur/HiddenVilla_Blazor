@@ -17,12 +17,12 @@ jobs:
             #    env:
             #        SSH_AUTH_SOCK: /tmp/ssh_agent.sock
             #    run: ./fetch-dependencies.sh
-            - name: Hello world action step
-              id: hello
-                uses: ./.github/actions/hello-world-javascript-action
-                #uses: https://github.com/crinabucur/hello-world-javascript-action
-                with:
-                  who-to-greet: 'Crina Catalina Bucur'
-              # Use the output from the `hello` step
-              - name: Get the output time
-                run: echo "The time was ${{ steps.hello.outputs.time }}"
+            # - name: Hello world action step
+              # id: hello
+                # uses: ./.github/actions/hello-world-javascript-action
+                # #uses: https://github.com/crinabucur/hello-world-javascript-action
+                # with:
+                  # who-to-greet: 'Crina Catalina Bucur'
+              # # Use the output from the `hello` step
+              # - name: Get the output time
+                # run: echo "The time was ${{ steps.hello.outputs.time }}"
