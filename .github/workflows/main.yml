@@ -4,38 +4,74 @@ jobs:
     build:
         runs-on: ubuntu-18.04
         steps:
-            - name: Checkout repository
-              uses: actions/checkout@v2
-              
-              
-            - name: clone submodule
-              #env:
-                #SSH_KEY: ${{secrets.HELLO_WORLD_JS_ACTION_READONLY_ACCESS_PRIVATE_KEY}}
-              uses: actions/checkout@v2
-              with:
-                repository: crinabucur/hello-world-javascript-action
-                path: hello-world-javascript-action
-                ref: v1.1
-                ssh-key: ${{secrets.HELLO_WORLD_JS_ACTION_READONLY_ACCESS_PRIVATE_KEY}}
-                persist-credentials: true
-             
-            - name: checkout submodule
-              env:
-                SSH_KEY: ${{secrets.HELLO_WORLD_JS_ACTION_READONLY_ACCESS_PRIVATE_KEY}}
-              run: |
-                # git submodule init
-                # git submodule update
+            -   uses: actions/checkout@v1
 
+            -   name: Setup SSH Keys and known_hosts
+                env:
+                    SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+                run: |
+                    ssh-agent -a $SSH_AUTH_SOCK > /dev/null
+                    ssh-add - <<< "${{secrets.HELLO_WORLD_JS_ACTION_READONLY_ACCESS_PRIVATE_KEY}}"
+
+            -   name: Some task that fetches dependencies
+                env:
+                    SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+                run: ./fetch-deps.sh
+                
             - name: hello world action step
+              env:
+                SSH_AUTH_SOCK: /tmp/ssh_agent.sock
               id: hello
-              uses: ./.github/actions/hello-world-javascript-action
+              #uses: ./.github/actions/hello-world-javascript-action
               #uses: https://github.com/crinabucur/hello-world-javascript-action
-              #uses: crinabucur/hello-world-javascript-action
+              uses: crinabucur/hello-world-javascript-action
               with:
                   who-to-greet: 'crina catalina bucur'
+                  
               # use the output from the `hello` step
             - name: get the output time
               run: echo "the time was ${{ steps.hello.outputs.time }}"
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            # - name: Checkout repository
+              # uses: actions/checkout@v2
+              
+              
+            # - name: clone submodule
+              # #env:
+                # #SSH_KEY: ${{secrets.HELLO_WORLD_JS_ACTION_READONLY_ACCESS_PRIVATE_KEY}}
+              # uses: actions/checkout@v2
+              # with:
+                # repository: crinabucur/hello-world-javascript-action
+                # path: hello-world-javascript-action
+                # ref: v1.1
+                # ssh-key: ${{secrets.HELLO_WORLD_JS_ACTION_READONLY_ACCESS_PRIVATE_KEY}}
+                # persist-credentials: true
+             
+            # - name: checkout submodule
+              # env:
+                # SSH_KEY: ${{secrets.HELLO_WORLD_JS_ACTION_READONLY_ACCESS_PRIVATE_KEY}}
+              # run: |
+                # # git submodule init
+                # # git submodule update
+
+            # - name: hello world action step
+              # id: hello
+              # uses: ./.github/actions/hello-world-javascript-action
+              # #uses: https://github.com/crinabucur/hello-world-javascript-action
+              # #uses: crinabucur/hello-world-javascript-action
+              # with:
+                  # who-to-greet: 'crina catalina bucur'
+              # # use the output from the `hello` step
+            # - name: get the output time
+              # run: echo "the time was ${{ steps.hello.outputs.time }}"
               
             
                 
