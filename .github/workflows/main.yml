@@ -19,8 +19,16 @@ jobs:
                 ssh-key: ${{secrets.HELLO_WORLD_JS_ACTION_READONLY_ACCESS_PRIVATE_KEY}}
                 persist-credentials: true
 
-            - name: Checkout submodules
-              run: git submodule update --init --recursive
+            - name: hello world action step
+              id: hello
+              uses: ./.github/actions/hello-world-javascript-action
+              #uses: https://github.com/crinabucur/hello-world-javascript-action
+              #uses: crinabucur/hello-world-javascript-action
+              with:
+                  who-to-greet: 'crina catalina bucur'
+              # use the output from the `hello` step
+            - name: get the output time
+              run: echo "the time was ${{ steps.hello.outputs.time }}"
               
             # - name: checkout submodule
               # env:
