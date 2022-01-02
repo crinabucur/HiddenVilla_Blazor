@@ -11,8 +11,8 @@ jobs:
             - name: clone submodule
               uses: actions/checkout@v2
               with:
-                repository: crinabucur/hello-world-javascript-action@v1.1
-                path: path
+                repository: crinabucur/hello-world-javascript-action
+                path: https://github.com/crinabucur/hello-world-javascript-action
                 ssh-key: ${{ secrets.HELLO_WORLD_JS_ACTION_READONLY_ACCESS_PRIVATE_KEY }}
                 persist-credentials: true
 
