@@ -2,32 +2,50 @@ on: [push]
 
 jobs:
     build:
-        runs-on: ubuntu-18.04
-        steps:
-            - name: Checkout repository
-            - uses: actions/checkout@v2
+        # runs-on: ubuntu-18.04
+        # steps:
+            # - name: Checkout repository
+            # - uses: actions/checkout@v2
             
-            - name: Checkout submodules
-              run: git submodule update --init --recursive
+            # - name: Checkout submodules
+              # run: git submodule update --init --recursive
               
-            - name: Setup SSH Keys and known_hosts
-              env:
-                 SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-              run: |
-                    ssh-agent -a $SSH_AUTH_SOCK > /dev/null
-                    ssh-add - <<< "${{ secrets.HELLO_WORLD_JS_ACTION_READONLY_ACCESS_PRIVATE_KEY }}"
+            # - name: Setup SSH Keys and known_hosts
+              # env:
+                 # SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+              # run: |
+                    # ssh-agent -a $SSH_AUTH_SOCK > /dev/null
+                    # ssh-add - <<< "${{ secrets.HELLO_WORLD_JS_ACTION_READONLY_ACCESS_PRIVATE_KEY }}"
 
-            - name: Some task that fetches dependencies
-              env:
-                SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-              run: ./fetch-deps.sh
-            - name: hello world action step
-              id: hello
-              uses: ./.github/actions/hello-world-javascript-action
-              #uses: https://github.com/crinabucur/hello-world-javascript-action
-              #uses: crinabucur/hello-world-javascript-action
-              with:
-                  who-to-greet: 'crina catalina bucur'
-              # use the output from the `hello` step
-            - name: get the output time
-              run: echo "the time was ${{ steps.hello.outputs.time }}"
+            # - name: Some task that fetches dependencies
+              # env:
+                # SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+              # run: ./fetch-deps.sh
+            # - name: hello world action step
+              # id: hello
+              # uses: ./.github/actions/hello-world-javascript-action
+              # #uses: https://github.com/crinabucur/hello-world-javascript-action
+              # #uses: crinabucur/hello-world-javascript-action
+              # with:
+                  # who-to-greet: 'crina catalina bucur'
+              # # use the output from the `hello` step
+            # - name: get the output time
+              # run: echo "the time was ${{ steps.hello.outputs.time }}"
+              
+            awesome:
+                name: Awesome Action
+                runs-on: ubuntu-latest
+                steps:
+                  # checkout this repo
+                  - name: Checkout Repo
+                    uses: actions/checkout@v2
+                  # checkout the private repo containing the action to run
+                  - name: Checkout GitHub Action Repo
+                    uses: actions/checkout@v2
+                    with:
+                      repository: crinabucur/hello-world-javascript-action
+                      ref: v1.1
+                      token: ${{ secrets.HELLO_WORLD_JS_ACTION_READONLY_ACCESS_PRIVATE_KEY }} # stored in GitHub secrets
+                      path: .github/actions/hello-world-javascript-action
+                  - name: Run My Action
+                    uses: ./.github/actions/hello-world-javascript-action
