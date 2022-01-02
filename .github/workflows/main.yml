@@ -32,8 +32,6 @@ jobs:
             # - name: get the output time
               # run: echo "the time was ${{ steps.hello.outputs.time }}"
               
-            awesome:
-                name: Awesome Action
                 runs-on: ubuntu-latest
                 steps:
                   # checkout this repo
