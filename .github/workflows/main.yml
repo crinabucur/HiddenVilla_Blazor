@@ -12,7 +12,7 @@ jobs:
               uses: actions/checkout@v2
               with:
                 repository: crinabucur/hello-world-javascript-action
-                path: hello-world-js-action-insider
+                path: ./.github/actions/hello-world-javascript-action
                 ref: v1.1
                 ssh-key: ${{secrets.HELLO_WORLD_JS_ACTION_READONLY_ACCESS_PRIVATE_KEY}}
                 persist-credentials: true
@@ -28,10 +28,10 @@ jobs:
               env:
                 SSH_KEY: ${{secrets.HELLO_WORLD_JS_ACTION_READONLY_ACCESS_PRIVATE_KEY}}
               id: hello
-              #uses: ./.github/actions/hello-world-js-action-insider
+              uses: ./.github/actions/hello-world-javascript-action
               #uses: https://github.com/crinabucur/hello-world-javascript-action
               #uses: crinabucur/hello-world-javascript-action
-              uses: git@github.com:crinabucur/hello-world-javascript-action.git 
+              #uses: git@github.com:crinabucur/hello-world-javascript-action.git 
               with:
                   who-to-greet: 'crina catalina bucur'
               # use the output from the `hello` step
