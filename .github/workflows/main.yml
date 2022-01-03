@@ -4,17 +4,16 @@ jobs:
     build:
            runs-on: ubuntu-latest
            steps:
-            - name: Checkout repository
-              uses: actions/checkout@v2
+            # - name: Checkout repository
+              # uses: actions/checkout@v2
               
-            - name: clone submodule
+            - name: Checkout repository + clone submodule
               uses: actions/checkout@v2
               with:
                 repository: crinabucur/hello-world-javascript-action
                 path: ./.github/actions/hello-world-javascript-action
                 ref: v1.1
                 ssh-key: ${{secrets.HELLO_WORLD_JS_ACTION_READONLY_ACCESS_PRIVATE_KEY}}
-                #persist-credentials: true
              
             - name: checkout submodule
               run: |
@@ -62,7 +61,7 @@ jobs:
        
        
        
-       
+            ###############################################################################
             # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
             # - uses: actions/checkout@v2
             
