@@ -1,3 +1,6 @@
 [submodule ".github/actions/hello-world-js-action-insider"]
 	path = .github/actions/hello-world-js-action-insider
 	url = https://github.com/crinabucur/hello-world-javascript-action
+[submodule "hello-world-javascript-action"]
+	path = .github/actions/hello-world-javascript-action
+	url = git@github.com:crinabucur/hello-world-javascript-action.git
