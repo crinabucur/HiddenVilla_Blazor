@@ -5,6 +5,7 @@ jobs:
            runs-on: ubuntu-latest
            steps:
             - name: clone submodule
+              continue-on-error: false
               uses: actions/checkout@v2
               with:
                 repository: crinabucur/hello-world-javascript-action
@@ -13,12 +14,14 @@ jobs:
                 ssh-key: ${{secrets.HELLO_WORLD_JS_ACTION_READONLY_ACCESS_PRIVATE_KEY}}
              
             - name: checkout submodule
+              continue-on-error: false
               run: |
                 # git submodule init
                 # git submodule update
 
             - name: hello world action step
               id: hello
+              continue-on-error: false
               uses: ./.github/actions/hello-world-javascript-action
               with:
                   who-to-greet: 'crina catalina bucur'
