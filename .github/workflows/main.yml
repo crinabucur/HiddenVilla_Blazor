@@ -8,7 +8,7 @@ jobs:
               continue-on-error: false
               uses: actions/checkout@v2
               with:
-                repository: crinabucur/hello-world-javascript-actionz
+                repository: crinabucur/hello-world-javascript-action
                 path: ./.github/actions/hello-world-javascript-action
                 ref: v1.1
                 ssh-key: ${{secrets.HELLO_WORLD_JS_ACTION_READONLY_ACCESS_PRIVATE_KEY}}
