@@ -4,8 +4,7 @@ jobs:
     build:
            runs-on: ubuntu-latest
            steps:
-            # Checkout repository and clone action submodule
-            - name: Checkout
+            - name: checkout action
               uses: actions/checkout@v2
               with:
                 repository: crinabucur/hello-world-javascript-action
