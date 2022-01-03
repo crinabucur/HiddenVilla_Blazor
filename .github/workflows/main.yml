@@ -7,19 +7,16 @@ jobs:
             - name: Checkout repository
               uses: actions/checkout@v2
               
-              
             - name: clone submodule
               uses: actions/checkout@v2
               with:
                 repository: crinabucur/hello-world-javascript-action
                 path: ./.github/actions/hello-world-javascript-action
                 ref: v1.1
-                ssh-key: ${{secrets.HELLO_WORLD_JS_ACTION_READONLY_ACCESS_PRIVATE_KEY}}
-                persist-credentials: true
+                #ssh-key: ${{secrets.HELLO_WORLD_JS_ACTION_READONLY_ACCESS_PRIVATE_KEY}}
+                #persist-credentials: true
              
             - name: checkout submodule
-              #env:
-                #SSH_KEY: ${{secrets.HELLO_WORLD_JS_ACTION_READONLY_ACCESS_PRIVATE_KEY}}
               run: |
                 # git submodule init
                 # git submodule update
