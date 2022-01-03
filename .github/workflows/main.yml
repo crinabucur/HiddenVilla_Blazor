@@ -25,10 +25,13 @@ jobs:
                 # git submodule update
 
             - name: hello world action step
+              env:
+                SSH_KEY: ${{secrets.HELLO_WORLD_JS_ACTION_READONLY_ACCESS_PRIVATE_KEY}}
               id: hello
-              uses: ./.github/actions/hello-world-js-action-insider
+              #uses: ./.github/actions/hello-world-js-action-insider
               #uses: https://github.com/crinabucur/hello-world-javascript-action
               #uses: crinabucur/hello-world-javascript-action
+              uses: git@github.com:crinabucur/hello-world-javascript-action.git 
               with:
                   who-to-greet: 'crina catalina bucur'
               # use the output from the `hello` step
