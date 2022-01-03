@@ -14,7 +14,7 @@ jobs:
               id: hello
               #uses: ./.github/actions/hello-world-javascript-action
               #uses: https://github.com/crinabucur/hello-world-javascript-action
-              uses: git@github.com:crinabucur/hello-world-javascript-action.git@master
+              uses: git@github.com:crinabucur/hello-world-javascript-action.git
               #uses: crinabucur/hello-world-javascript-action@v1.1
               with:
                   who-to-greet: 'crina catalina bucur'
