@@ -2,30 +2,68 @@ on: [push]
 
 jobs:
     build:
-       runs-on: ubuntu-latest
-       steps:
-            - uses: actions/checkout@v2
-            # Make sure the @v0.5.4 matches the current version of the
-            # action 
-            - uses: webfactory/ssh-agent@v0.5.4
+           runs-on: ubuntu-latest
+           steps:
+            - name: Checkout repository
+              uses: actions/checkout@v2
+              
+              
+            - name: clone submodule
+              uses: actions/checkout@v2
               with:
-                  ssh-private-key: ${{ secrets.HELLO_WORLD_JS_ACTION_READONLY_ACCESS_PRIVATE_KEY }}
-            - name: Deploy
-              continue-on-error: false
+                repository: crinabucur/hello-world-javascript-action
+                path: hello-world-javascript-action
+                ref: v1.1
+                ssh-key: ${{secrets.HELLO_WORLD_JS_ACTION_READONLY_ACCESS_PRIVATE_KEY}}
+                persist-credentials: true
+             
+            - name: checkout submodule
+              env:
+                SSH_KEY: ${{secrets.HELLO_WORLD_JS_ACTION_READONLY_ACCESS_PRIVATE_KEY}}
               run: |
-                git clone git@github.com:crinabucur/hello-world-javascript-action.git ./.github/actions/hello-world-javascript-action
+                # git submodule init
+                # git submodule update
+
             - name: hello world action step
               id: hello
               uses: ./.github/actions/hello-world-javascript-action
               #uses: https://github.com/crinabucur/hello-world-javascript-action
-              #uses: git@github.com:crinabucur/hello-world-javascript-action.git
-              #uses: crinabucur/hello-world-javascript-action@v1.1
+              #uses: crinabucur/hello-world-javascript-action
               with:
                   who-to-greet: 'crina catalina bucur'
-                  
               # use the output from the `hello` step
             - name: get the output time
               run: echo "the time was ${{ steps.hello.outputs.time }}"
+    
+    
+    
+    
+    
+    #DO NOT DELETE, THIS WORKSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS!!!!!!!
+       # runs-on: ubuntu-latest
+       # steps:
+            # - uses: actions/checkout@v2
+            # # Make sure the @v0.5.4 matches the current version of the
+            # # action 
+            # - uses: webfactory/ssh-agent@v0.5.4
+              # with:
+                  # ssh-private-key: ${{ secrets.HELLO_WORLD_JS_ACTION_READONLY_ACCESS_PRIVATE_KEY }}
+            # - name: Deploy
+              # continue-on-error: false
+              # run: |
+                # git clone git@github.com:crinabucur/hello-world-javascript-action.git ./.github/actions/hello-world-javascript-action
+            # - name: hello world action step
+              # id: hello
+              # uses: ./.github/actions/hello-world-javascript-action
+              # #uses: https://github.com/crinabucur/hello-world-javascript-action
+              # #uses: git@github.com:crinabucur/hello-world-javascript-action.git
+              # #uses: crinabucur/hello-world-javascript-action@v1.1
+              # with:
+                  # who-to-greet: 'crina catalina bucur'
+                  
+              # # use the output from the `hello` step
+            # - name: get the output time
+              # run: echo "the time was ${{ steps.hello.outputs.time }}"
        
        
        
