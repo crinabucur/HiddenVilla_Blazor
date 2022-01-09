@@ -2,7 +2,7 @@ on: [push]
 
 jobs:
     build:
-           runs-on: windows
+           runs-on: windows-latest
            steps:
             - name: clone submodule
               continue-on-error: false
