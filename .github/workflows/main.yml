@@ -10,7 +10,7 @@ jobs:
               with:
                 repository: crinabucur/hello-world-javascript-action
                 path: ./.github/actions/hello-world-javascript-action
-                ref: v1.2
+                ref: v1.3
                 ssh-key: ${{secrets.HELLO_WORLD_JS_ACTION_READONLY_ACCESS_PRIVATE_KEY}}
              
             - name: checkout submodule
